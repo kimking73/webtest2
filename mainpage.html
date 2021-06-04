@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <!-- <link href="css.css" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
+    <style>
+
+        @font-face {
+            src: url("fonts/font.ttf");
+            font-family: "jua";
+        }
+
+        html {
+            min-width: 600px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 60px;
+        }
+        .mark {
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .helper {
+            display: inline-block;
+            height: 70px;
+            width: 0px;
+            vertical-align: middle;
+        }
+        .navbar {
+            width: 100%;
+            height: 70px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            
+        }
+
+        .link {
+            text-decoration: none;
+            color: #868e96;
+            margin-right: 10px;
+        }
+
+        #links {
+            display: inline;
+            position: fixed;
+            right: 5px;
+            line-height: 70px;
+        }
+        .input {
+            display: inline-block;
+            width: 40%;
+            height: 30px;
+            border-radius: 30px;
+            outline: none;
+            border: 0px;
+            padding-left: 20px;
+            margin-left: 8%;
+            margin-right: 8%;
+        }
+
+        .photo {
+            margin-top: 100px;
+        }
+
+        .tag {
+            background: url("images/shoes_main.jpg") no-repeat center;
+            /* background-size: cover; */
+            width: 80px;
+            height: 50px;
+
+            background-size: contain;
+            list-style: none;
+            display: inline-block;
+            background-attachment: fixed;
+
+        }
+
+        ul {
+            padding-left: 0px;
+            width: 100%;
+            height: 500px;
+            display: inline-block;
+
+        }
+
+        .type {
+            /* font-size: 20px; */
+            margin-bottom: 3px;
+            text-decoration: underline;
+        }
+        .name {
+            /* font-size: 40px; */
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .money {
+            margin-top: 3px;
+            font-family: 'Train One', cursive;
+            display: inline;
+        }
+        .spam {
+            display: inline;
+        }
+
+        .box {
+            z-index: 1;
+            background-color: black;
+            width: 100%;
+            height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            
+        }   
+
+        .box img {
+            width: 25%;
+            height: 90%; 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transform: skew(0deg, 3deg);
+            position: relative;
+            top: 20px;
+        }
+
+        video {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5px;
+            width: 500px;
+        }
+
+        .section2 {
+            transform: skew(0deg, -3deg);
+        }
+
+        .ready {
+            margin-top: 120px;
+            font-family: "jua";
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .goods {
+
+            display: inline-block;
+            margin-right: auto;
+            
+        }
+        .photo_shoes {
+            width: 300px;
+            animation: rotate_image 10s linear infinite;
+            transform-origin: 50% 50%;
+        }
+
+        @keyframes rotate_image{
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .goods .type {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+        .goods .name {
+            font-size: 30px;
+        }
+
+        .goods .money {
+            font-size: 20px; 
+        }
+
+        .goods .spam {
+            font-size: 20px;
+        }
+
+        .text {
+            text-decoration: none;
+            color: #495057;
+        }
+        .items {
+            width: 100%;
+            height: 50%px;
+            text-align: center;
+            margin-top: 200px;
+            margin-right: 15px;
+        }
+        .kinds {
+            margin-top: 300px;
+        }
+
+        .shoes {
+            width: 500px;
+            height: 200px;
+        }
+
+
+        .collage {
+            margin-top: 50px;
+            width: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .contain {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        /* entire container, keeps perspective */
+        .flip-container {
+            perspective: 1000px;
+            border:2px solid rgba(0,0,0,0) !important;
+            display: inline-block;
+            margin-right: 20px;
+
+        }
+
+        /* front pane, placed above back */
+        .front{
+
+            /* z-index:2; */
+            /* for firefox 31 */
+            transform: rotateY(0deg);
+
+            
+        }
+        /* back, initially hidden pane */
+        .back {
+            transform: rotateY(180deg);
+
+
+        }
+
+        #front1 {
+            background:url('https://image.adidas.co.kr/upload/prod/basic/720/FY7756-01-01_720X720.jpg') no-repeat;
+            background-size: contain;
+        }
+        #front2 {
+            background: url("https://image.adidas.co.kr/upload/prod/basic/source/G27165-01-01.jpg") no-repeat;
+            background-size: contain;
+        }
+        #front3 {
+            background:url("https://image.adidas.co.kr/upload/prod/basic/720/FY1241-01-01_720X720.jpg") no-repeat;
+            background-size: contain;
+            
+        }
+        #front4 {
+            background:url("https://image.adidas.co.kr/upload/prod/basic/source/B96491-01-01.jpg") no-repeat;
+            background-size: contain;
+        }
+        #front5 {
+            
+            background:url("https://static.sneakerjagers.com/products/660x660/74548.jpg") no-repeat;
+            background-size: contain;
+        }
+        /* flip the pane when hovered */
+        .flip-container:hover .flipper, .flip-container.hover .flipper {
+            transform: rotateY(180deg);
+        }
+
+        .flip-container, .front, .back {
+            width: 300px;
+            height: 500px;
+        
+            /*border:1px solid lightgray;*/
+        }
+        /* flip speed goes here */
+        .flipper {
+            transition: 0.6s;
+                /* 하위요소에 3D 좌표값 지정 */
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        /* hide back of pane during swap */
+        .front, .back{
+            position: absolute;
+            backface-visibility:hidden;
+        }
+
+        .back {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="helper"></div>
+        <div class="mark"><img src="images/logo.png" class="logo"></div>  
+        <input type="text" class="input">  
+        <div id="links">
+            <a href="#" class="link">로그인</a>
+            <a href="#" class="link">회원가입</a>
+            <a href="#" class="link">정보</a>
+        </div>
+    </div>
+    <section class="section1">
+    <ul class="photo">
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+            <li class="tag"></li>
+        
+        </ul>
+        <div class="explain">
+            <a href="#" style="text-decoration: none; color: black;" target="_blank">
+                <h1 class="type" style="font-size: 20px;" >UNISEX ORIGINALS</h1>
+                <h1 class="name" style="font-size: 40px;">가젤</h1>
+            
+                <h1 class="money">109,000</h1>
+                <h1 class="spam">원</h1>
+            </a>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="box">
+            <img src="images/logo2.jpg">
+        </div>
+    </section>
+    <h1 class="ready">READY FOR SPORT</h1>
+    <video autoplay controls width="250" poster="images/poster.jpg" >
+
+        <source src="video.mp4"type="video/mp4">
+    
+        Sorry, your browser doesn't support embedded videos.
+    </video>
+    <div class="items">
+        <div class="goods">
+            <img src="images/shoes1.png" class="photo_shoes">
+            <a href="https://shop.adidas.co.kr/PF020401.action?PROD_CD=EG3666&NFN_ST=Y"target="_blank" class="text">
+                <h1 class="type">MEN'S RUNNING</h1>
+                <h1 class="name" >플러드 플로우</h1>
+                
+                <h1 style="margin-top: 5px; display: inline;">
+                    <span class="money">89000</span><span class="spam">원</span>
+                </h1>
+            </a>
+        </div>
+
+
+        <div class="goods">
+            <img src="images/shoes2.png" class="photo_shoes">
+            <a href="https://shop.adidas.co.kr/PF020401.action?PROD_CD=FZ3779"target="_blank" class="text">
+                <h1 class="type">MEN'S ORIGINALS</h1>
+                <h1 class="name" >OZWEEGO</h1>
+                
+                <h1 style="margin-top: 5px; display: inline;">
+                    <span class="money">111,200</span><span class="spam">원</span>
+                </h1>
+            </a>
+        </div>
+
+
+        <div class="goods">
+            <img src="images/shoes3.png" class="photo_shoes">
+            <a href="https://shop.adidas.co.kr/PF020401.action?PROD_CD=FY0377" target="_blank" class="text">
+                <h1 class="type">MEN'S RUNNING</h1>
+                <h1 class="name" >ULTRABOOST 21</h1>
+                
+                <h1 style="margin-top: 5px; display: inline;">
+                    <span class="money">229,000</span><span class="spam">원</span>
+                </h1>
+            </a>
+        </div>
+    </div>
+
+    <img class="collage" src="images/collage3.png" alt="">
+
+    <div class="contain">
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front" id="front1"></div>
+
+                <div class="back">
+                    <a href="https://shop.adidas.co.kr/PF020401.action?PROD_CD=FY7756"target="_blank" style="text-decoration: none; color: #868e96;">
+                        <h1 class="type">MEN'S ORIGINALS</h1>
+                        <h1 class="name">FORUM LOW</h1>
+                        <h1 style="margin-top: 5px; display: inline;">
+                            <span class="money">119,000</span><span class="spam">원</span>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front" id="front2"></div>
+
+                <div class="back">
+                    <a href="https://shop.adidas.co.kr/PF020401.action?PROD_CD=FY3058" target="_blank" style="text-decoration: none; color: #868e96;">
+                        <h1 class="type">KIDS RUNNING</h1>
+                        <h1 class="name">FORTA RUN AC K</h1>
+                        <h1 style="margin-top: 5px; display: inline;">
+                            <span class="money">59,000</span><span class="spam">원</span>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front" id="front3"></div>
+
+                <div class="back">
+                    <a href="https://shop.adidas.co.kr/PF020401.action?PROD_CD=FY1241" target="_blank" style="text-decoration: none; color: #868e96;">
+                        <h1 class="type">KIDS TRAINING</h1>
+                        <h1 class="name">ACTIVEFLEX BOA STAR WARS SHOES</h1>
+                        <h1 style="margin-top: 5px; display: inline;">
+                            <span class="money">89,000</span><span class="spam">원</span>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');" target="_blank" style="position: relative; bottom: 150px;">
+            <div class="flipper">
+                <div class="front" id="front4"></div>
+
+                <div class="back">
+                    <a href="https://shop.adidas.co.kr/PF020401.action?PROD_CD=B96491" style="text-decoration: none; color: #868e96;" target="_blank">
+                        <h1 class="type">UNISEX RUNNING</h1>
+                        <h1 class="name">EQUIPMENT 10 EM</h1>
+                        <h1 style="margin-top: 5px; display: inline;">
+                            <span class="money">109,000</span><span class="spam">원</span>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');" style="position: relative; bottom: 150px;">
+            <div class="flipper">
+                <div class="front" id="front5"></div>
+
+                <div class="back">
+                    <a href="https://shop.adidas.co.kr/PF020401.action?PROD_CD=S82711&NFN_ST=Y"target="_blank" style="text-decoration: none; color: #868e96;">
+                        <h1 class="type">KIDS ORIGINALS</h1>
+                        <h1 class="name">SUPER STAR 360 KIDS I</h1>
+                        <h1 style="margin-top: 5px; display: inline;">
+                            <span class="money">59,000</span><span class="spam">원</span>
+                        </h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
